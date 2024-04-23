@@ -1,7 +1,17 @@
+using Microsoft.AspNetCore.Mvc;
+using WarehouseApp.Properties.Repositories;
+
 namespace WarehouseApp.Properties.Controllers;
 
-public class WarehouseController
+[Route("api/[controller]")]
+[ApiController]
+public class WarehouseController : ControllerBase
 {
+    private readonly IWarehouseRepository _warehouseRepository;
+    public WarehouseController(IWarehouseRepository warehouseRepository)
+    {
+        _warehouseRepository =warehouseRepository;
+    }
     // robic na taskach !!
     //wstrzykiwianie zaleznosci --> dependency injection
     
